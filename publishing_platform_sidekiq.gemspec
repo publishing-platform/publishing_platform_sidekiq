@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "redis", "< 5"
   spec.add_dependency "redis-namespace", "~> 1.6"
-  spec.add_dependency "sidekiq", "~> 6.5", ">= 6.5.12"
+  spec.add_dependency "sidekiq", ">= 6.5.12", "< 8.0"
 
   spec.add_development_dependency "publishing_platform_rubocop"
 end
