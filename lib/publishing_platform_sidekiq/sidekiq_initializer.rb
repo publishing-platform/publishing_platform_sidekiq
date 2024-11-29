@@ -2,13 +2,8 @@ require "sidekiq"
 
 module PublishingPlatformSidekiq
   module SidekiqInitializer
-    def self.setup_sidekiq(publishing_platform_app_name, redis_config = {})
-      redis_config = redis_config.merge(
-        namespace: publishing_platform_app_name,
-        reconnect_attempts: 4,
-        reconnect_delay: 15,
-        reconnect_delay_max: 60,
-      )
+    def self.setup_sidekiq(redis_config = {})
+      redis_config = redis_config.merge(reconnect_attempts: [15, 30, 45, 60])
 
       Sidekiq.configure_server do |config|
         config.logger = Sidekiq::Logger.new($stdout)

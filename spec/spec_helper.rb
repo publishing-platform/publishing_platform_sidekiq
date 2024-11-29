@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require "simplecov"
+SimpleCov.start
+
 require "publishing_platform_sidekiq"
 
 RSpec.configure do |config|
