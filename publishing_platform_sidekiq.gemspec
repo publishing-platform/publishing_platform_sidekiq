@@ -14,6 +14,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir.glob("lib/**/*") + %w[README.md LICENSE]
   spec.require_paths = %w[lib]
 
+  spec.add_dependency "publishing_platform_api_adapters"
   spec.add_dependency "redis-client", ">= 0.22.2"
   spec.add_dependency "sidekiq", "~> 7.0", "< 8"
 

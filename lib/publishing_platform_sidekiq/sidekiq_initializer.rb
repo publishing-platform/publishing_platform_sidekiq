@@ -1,4 +1,5 @@
 require "sidekiq"
+require "publishing_platform_sidekiq/api_headers"
 
 module PublishingPlatformSidekiq
   module SidekiqInitializer
@@ -8,10 +9,18 @@ module PublishingPlatformSidekiq
       Sidekiq.configure_server do |config|
         config.logger = Sidekiq::Logger.new($stdout)
         config.redis = redis_config
+
+        config.server_middleware do |chain|
+          chain.add PublishingPlatformSidekiq::APIHeaders::ServerMiddleware
+        end
       end
 
       Sidekiq.configure_client do |config|
         config.redis = redis_config
+
+        config.client_middleware do |chain|
+          chain.add PublishingPlatformSidekiq::APIHeaders::ClientMiddleware
+        end
       end
     end
   end
