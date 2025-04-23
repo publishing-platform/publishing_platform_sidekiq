@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Provides standard setup and behaviour for Sidekiq in Publishing Platform applications."
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.0"
+  spec.required_ruby_version = ">= 3.2"
 
   spec.files = Dir.glob("lib/**/*") + %w[README.md LICENSE]
   spec.require_paths = %w[lib]
@@ -20,6 +20,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "climate_control"
   spec.add_development_dependency "publishing_platform_rubocop"
-  spec.add_development_dependency "railties", "~> 7"
+  spec.add_development_dependency "railties", "~> 8"
   spec.add_development_dependency "simplecov"
 end
