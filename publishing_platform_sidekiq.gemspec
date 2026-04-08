@@ -14,12 +14,12 @@ Gem::Specification.new do |spec|
   spec.files = Dir.glob("lib/**/*") + %w[README.md LICENSE]
   spec.require_paths = %w[lib]
 
-  spec.add_dependency "publishing_platform_api_adapters"
+  spec.add_dependency "publishing_platform_api_adapters", "~> 0.10"
   spec.add_dependency "redis-client", ">= 0.22.2"
   spec.add_dependency "sidekiq", "~> 7.0", "< 8"
 
-  spec.add_development_dependency "climate_control"
-  spec.add_development_dependency "publishing_platform_rubocop"
+  spec.add_development_dependency "climate_control", "~> 1.2"
+  spec.add_development_dependency "publishing_platform_rubocop", "~> 0.2"
   spec.add_development_dependency "railties", "~> 8"
-  spec.add_development_dependency "simplecov"
+  spec.add_development_dependency "simplecov", "~> 0.22"
 end
